@@ -1,0 +1,51 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+#wrapper{
+	padding: 2rem;
+}
+#your_gold {
+	height: 3rem;
+	width: 10rem;
+}
+#your_gold h5{
+	display: inline;
+}
+#your_gold p {
+	height: 1.2rem;
+	width: 5rem;
+	font-weight: bold;
+	display: inline-block;
+	border: 2px solid black;
+	text-align: center;
+	margin-left: 1/4rem;
+}
+.location {
+	height: 10rem;
+	width: 12rem;
+	display: inline-block;
+	border: 2px solid black;
+	margin-right: 1rem;
+	margin-bottom: 1rem;
+	text-align: center;
+}
+.location h3, .location p {
+	margin-top: 1rem;
+}
+.location button {
+	margin-top: 2rem;
+}
+#activities {
+	height: 6rem; 
+	width:  52.5rem;
+	border: 2px solid black;
+	overflow: scroll;
+	
+}
+.lose {
+	color: red;
+}
+.gain {
+	color: green;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>index</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">	
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>	
+	</head>
+    <body>
+    	<div id="wrapper">
+	        <h2>Welcome to the Great Number Game</h2>
+	        <p>I am thinking of a number between 1 and 100</p>
+	        <p>Take a guess!</p>
+	        <div class="results">
+			    {% if session['message'] == 'too_high' %}
+			    <p id="th">Too high!</p> 
+			    {% elif session['message'] == 'too_low' %}
+			    <p id="tl">Too low!</p>
+			    {% elif session['message'] == 'correct' %}
+		        <script type="text/javascript">
+		        $(document).ready(function(){
+    				$('#hide1').hide();
+    			});	
+				</script>
+			    <div id="correct">
+			    	<p>{{ session['correct_num'] }} was the number!</p>
+				    <a href="/reset"><button>Play Again!</button></a>   
+			    </div>
+			    {% endif %}
+			</div>
+			<div id="hide1">
+		        <form action='/guess' method='post'>
+					<input id="number" type="text" name="number">
+					<br>
+					<button id="submit">Submit</button>	
+				</form>
+				<p id="for_test">CORRECT NUMBER FOR TESTING: ({{ session['correct_num'] }})</p>	
+			</div>  		
+		</div>  
+    </body>
+</html

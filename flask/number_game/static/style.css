@@ -1,0 +1,46 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+#wrapper {
+	width: 60rem;
+}
+h2, p {
+	text-align: center;
+	margin-bottom: .5rem;
+}
+input{
+	margin-left: 41%;
+	margin-bottom: .5rem;
+}
+#submit{
+	margin-left: 47%;
+}
+h2 {
+	margin-top: 4rem;
+
+}
+#th, #tl {	
+	width: 5rem;
+	padding: 6rem;
+	color: white;
+	font-size: 1.2rem;
+	font-weight: bold;
+	vertical-align: middle;
+	background-color: red;
+	border: 2px solid black;
+	margin-left: 36%;
+}
+#correct{
+	width: 5rem;
+	padding: 6rem;
+	color: white;
+	font-size: 1.2rem;
+	font-weight: bold;
+	background-color: green;
+	border: 2px solid black;
+	margin-left: 36%;
+}
+form {
+	margin-bottom: .5rem;
+}
