@@ -1,0 +1,45 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+#wrapper {
+	width: 60rem;
+	padding: 2rem;
+	margin-top: 1rem;
+}
+#hide1 {
+	
+}
+#fail {
+	width: 12rem;
+	padding: 1/2rem 2rem;
+	color: white;
+	background-color: red;
+	border:  2px solid black;
+	margin-left: 5rem;
+	text-align: center;
+	list-style: none;
+}
+#success {
+	width: 22rem;
+	height: 3rem;
+	padding: 1/2rem 2rem;
+	background-color: green;
+	border:  2px solid black;
+	margin-left: 5rem;
+	list-style: none;
+}
+form {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+#show {
+	margin-top: 1/2rem;
+	margin-left: 2rem;
+}
+span {
+	margin-right: 3rem;
+}
+h2 {
+	margin-top: 2rem;
+}

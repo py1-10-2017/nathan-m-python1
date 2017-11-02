@@ -1,0 +1,7 @@
+USE twitter;
+
+SELECT * FROM users;
+
+INSERT INTO users 
+
+VALUES (6, 'Dennis', 'Rodman', 'dennisrodman', '1961-05-31', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP); 

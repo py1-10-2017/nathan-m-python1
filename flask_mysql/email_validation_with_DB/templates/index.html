@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>email_validation_with_DB</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">	
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	<script type="text/javascript">
+		$(document).ready(function(){
+    		$('#show_success').hide();
+    	});	
+	</script>
+</head>
+	<body>
+		<div id="wrapper">
+			{% with messages = get_flashed_messages() %}
+
+				{% if messages %}
+				<ul>
+
+					{% for message in messages %}	
+
+						{% if message != 'Email is not valid!' and message != 'Email required' %}
+							<script type="text/javascript">
+				        	$(document).ready(function(){
+		    					$('#hide1').hide();
+		    					$('#show_success').show();
+		    				});	
+							</script>
+						<li id='success'>{{ message }}</li>
+
+						{% else %}
+							<script type="text/javascript">
+				        	$(document).ready(function(){
+		    					$('#hide2').hide();
+		    				});	
+							</script>
+						<li id='fail'>{{ message }}</li>
+			  			{% endif %}
+
+					{% endfor %}
+
+				</ul>
+				{% endif %}
+
+			{% endwith %}
+			<form id='hide1' action='/add' method='POST'>
+			  	<label for='email'>Email Address:<input type='text' name='email' id='email'></label>
+			  	<input type='submit' value='Submit'>
+			</form>
+			<h2 id='show_success'>Email Addresses Entered:</h2>	
+			
+			<div id='show'>
+				{% for email in all_email %}
+					<h3 id='hide2'>{{ email['email_address'] }} <span></span>{{ email['created_at'] }}</h3>
+				{% endfor %}
+			</div>
+		</div>
+	</body>
+</html>
