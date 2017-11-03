@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>edit</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+	<div id="wrapper">
+		{% for friend in this_friend %}
+		
+		<form class='inputs2' action='/friends/{{ friend['id'] }}' method='POST'>
+			<div id='first0'>		
+				<label>First Name:<input type='text' name='firstn' id='firstn' value='{{ friend['first_name'] }}'></label>
+			</div>
+			<div id='last0'>
+				<label>Last Name:<input type='text' name='lastn' id='lastn' value='{{ friend['last_name'] }}'></label>
+			</div>
+			<div id='email0'>
+				<label>Email:<input type='text' name='email1' id='email1' value='{{ friend['email_address'] }}'></label>
+			</div>
+			<input type='submit' value='Update'>
+		</form>
+		{% endfor %}
+		
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}	
+				{% for message in messages %}
+					<p id='error2'>{{ message }}</p>
+				{% endfor %}	
+			{% endif %}
+		{% endwith %}		
+	</div>
+	
+</body>
+</html>

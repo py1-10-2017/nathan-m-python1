@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>full_friends</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">	
+  	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+	<div id="wrapper">
+		<h1>Full Friends</h1>
+		<table>
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Email</th>
+				<th>Actions</th>
+			</tr>	
+			
+			{% for friends in all_friends %}
+			<tr>
+				<td style="display:none;">{{ friends['id'] }}</td>
+				<td id="firname">{{ friends['first_name'] }}</td>
+				<td id="lasname">{{ friends['last_name'] }}</td>
+				<td id="emailadd">{{ friends['email_address'] }}</td>
+				<td><a href='/friends/{{ friends['id'] }}/edit' class='button'>Edit</a><a href='/friends/{{ friends['id'] }}/delete' class='button'>Delete</a></td>
+			</tr>	
+			{% endfor %}
+					
+		</table>
+		<form class='inputs' action='/friends' method='POST'>
+			<div id='first0'>
+				<label>First Name:<input type='text' name='fname' id='fname'></abel>
+			</div>
+			<div id='last0'>
+				<label>Last Name:<input type='text' name='lname' id='lname'></label>
+			</div>
+			<div id='email0'>
+				<label>Email:<input type='text' name='email' id='email'></label>
+			</div>
+			<input id='add' type='submit' value='Add Friend'>	
+		</form>
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}	
+				{% for message in messages %}
+					<p id='error1'>{{ message }}</p>
+				{% endfor %}	
+			{% endif %}
+		{% endwith %}
+	</div>
+</body>
+</html>
