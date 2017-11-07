@@ -114,7 +114,6 @@ def update(id):
 
 @app.route('/friends/<id>/delete')
 def destroy(id):
-	firstn = request.form['firstn']
 	query = "DELETE FROM friends WHERE id =" + id
 
 	data = 	{

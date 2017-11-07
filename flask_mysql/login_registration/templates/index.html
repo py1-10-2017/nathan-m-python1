@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>login_registration</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">	
+  	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+	<div id="wrapper">
+		<h1>Most Fun Login Experience In the World</h1>
+		<form class='login' action='/login' method='POST'>
+			<p>Please enter email address and password to login.</p>
+			<div id='email1'>
+				<label>Email:<input type='text' name='logemail' id='logemail'></abel>
+			</div>
+			<div id='pw1'>
+				<label>Password:<input type='text' name='logpw' id='logpw'></label>
+			</div>
+			<input class='button' type='submit' value='Login'>	
+		</form>
+		<form class='register' action='/create_user' method='POST'>
+			<p>If you haven't registered before, please enter information here and click "Register."</p>
+			<div id='first0'>
+				<label>First Name:<input type='text' name='fname' id='fname'></label>
+			</div>
+			<div id='last0'>
+				<label>Last Name:<input type='text' name='lname' id='lname'></label>
+			</div>
+			<div id='email0'>
+				<label>Email:<input type='text' name='email' id='email'></label>
+			</div>
+			<div id='pword0'>
+				<label>Password:<input type='text' name='pword' id='pword'></label>
+			</div>
+			<div id='pwconfirm0'>
+				<label>Confirm Password:<input type='text' name='pwconfirm' id='pwconfirm'></label>
+			</div>
+			<input class='button' type='submit' value='Register'>	
+		</form>
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}	
+				{% for message in messages %}
+					<p id='error1'>{{ message }}</p>
+				{% endfor %}	
+			{% endif %}
+		{% endwith %}
+	</div>
+</body>
+</html>

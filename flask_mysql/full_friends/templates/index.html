@@ -19,11 +19,12 @@
 			
 			{% for friends in all_friends %}
 			<tr>
-				<td style="display:none;">{{ friends['id'] }}</td>
 				<td id="firname">{{ friends['first_name'] }}</td>
 				<td id="lasname">{{ friends['last_name'] }}</td>
 				<td id="emailadd">{{ friends['email_address'] }}</td>
-				<td><a href='/friends/{{ friends['id'] }}/edit' class='button'>Edit</a><a href='/friends/{{ friends['id'] }}/delete' class='button'>Delete</a></td>
+				<td><a href='/friends/{{ friends['id'] }}/edit' class='button'>Edit</a>
+
+				<a href='/friends/{{ friends['id'] }}/delete' class='button'>Delete</a></td>
 			</tr>	
 			{% endfor %}
 					
