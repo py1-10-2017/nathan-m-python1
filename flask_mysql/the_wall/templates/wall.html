@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>the_wall</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">	
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+	<body>
+		<div id="wrapper">
+			<div id='header'>
+				<h3>CodingDojo Wall</h3>
+				<p id='username'>Welcome {{ user3[0]['first_name'] }} {{ user3[0]['last_name'] }}!</p>
+				<a class='log_off' href="/log_off">Log Off</a>	
+			</div>	
+
+			<form class='add_message' action='/wall/{{ user_id }}/message' method='POST'>				
+				<label>Post a message:
+				<textarea rows='4' cols='100' type='text' name='message' id='message'></textarea></label>
+				<input class='message_button' type='submit' value='Post Message'>
+			</form>
+			
+			<div class='show_message'>	
+				{% for message in user2 | reverse %}
+						<h2>{{ message['first_name'] }} {{ message['last_name'] }} - {{ message['message_created'].strftime("%B %d, %Y") }}</h2>
+						<h4>{{ message['message'] }}</h4>
+													
+						{% for comment in user1 %}
+							{% if comment['commessage_id'] == message['message_id'] %}
+							<h5>{{ comment['first_name'] }} {{ comment['last_name'] }} - {{ comment['comment_created'].strftime("%B %d, %Y") }}</h5>	
+							<h6>{{ comment['comment'] }}</h6>
+							{% endif %}
+						{% endfor %}
+						<form action='/wall/{{ message['message_id'] }}/{{ user_id }}/comment' method='POST'>			
+							<label>Comment:
+							<textarea rows='3' cols='80' type='text' name='comment' id='comment'></textarea></label>
+							<input class='comment_button' type='submit' value='Post Comment'>
+						</form>
+				{% endfor %}
+			</div>			
+		</div>	
+	</body>
+</html>
