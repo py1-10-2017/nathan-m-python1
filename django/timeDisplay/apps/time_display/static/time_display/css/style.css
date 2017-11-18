@@ -1,0 +1,15 @@
+h4 {
+    width: 13rem;
+    padding: .7rem;
+    text-align:center;
+    margin: 5rem auto 0rem;    
+    border: black .2rem solid;
+}
+h2 {
+    font-size: 2rem;
+    width: 30rem;
+    padding: 6.5rem;
+    text-align: center;
+    border: black .2rem solid;    
+    margin: 1rem auto;    
+}
