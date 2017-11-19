@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>random_word</title>
+	    {% load static %}
+    <link rel="stylesheet" href="{% static 'random_word/css/style.css' %}" media="screen" title="no title"  charset="utf-8">
+</head>
+  <body>
+    <h4>Random Word (attempt #{{request.session.number}})</h4>
+    <h2>{{request.session.random_string}}</h2>
+    <form action="/">
+      {% csrf_token %}
+      <input id="generate" type="Submit" name="makeWord" value="Generate">
+    </form>
+  </body>
+</html>
