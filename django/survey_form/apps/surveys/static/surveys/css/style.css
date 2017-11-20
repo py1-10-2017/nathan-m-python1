@@ -1,0 +1,58 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+#wrapper {
+	padding: 4rem;
+}
+.page {
+	height: 13.5rem;
+	width: 20.5rem;
+	padding: 1rem;
+	border: solid .05rem black;
+}
+.page input, select, textarea {
+	display: inline-block;
+	margin-bottom: .5rem;
+}
+#name {
+	width: 9.75rem;
+	margin-left: 5.25rem;
+}
+#location {
+	width: 10rem;
+	margin-left: 4.04rem;
+}
+#language {
+	width: 10rem;
+	margin-left: 2.33rem;
+}
+.page label {
+	display: block;
+	margin-bottom: .5rem;
+}
+#com_block {
+	width: 20rem;
+	height: 5rem;
+}
+#btn {
+	width: 4rem;
+	margin-left: 16rem;
+}
+h3 {
+	text-decoration: underline;
+	margin-bottom: 1rem;
+}
+.left_p {
+	display: inline-block;
+	margin-left: 1rem;
+}
+.right_p {
+	display: inline-block;
+	margin-left: 1rem;
+	vertical-align: top;
+}
+#btn2 {
+	width: 4rem;
+	margin-left: 16rem;
+	margin-top: 5rem;

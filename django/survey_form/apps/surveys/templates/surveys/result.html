@@ -3,8 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>result</title>
-	<link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
-
+		{% load static %}
+	<link rel="stylesheet" href="{% static 'surveys/css/style.css' %}" media="screen" title="no title"  charset="utf-8">
 </head>
 <body>
 	<div id="wrapper">
@@ -17,10 +17,10 @@
 				<p>Comment:</p>
 			</div>
 			<div class="right_p">
-				<p>{{result['name']}}</p>
-				<p>{{result['location']}}</p>
-				<p>{{result['language']}}</p>
-				<p>{{result['comment']}}</p>
+				<p>{{request.session.name}}</p>
+				<p>{{request.session.location}}</p>
+				<p>{{request.session.language}}</p>
+				<p>{{request.session.comment}}</p>
 			</div>
 			<form>
 				<input id="btn2" type="button" onclick="location.href='/'" value="Go Back" />
