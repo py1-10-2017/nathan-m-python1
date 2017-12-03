@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>checkout</title>
+</head>
+<body>
+	<h2>Thank you for your business!</h2><br>
+	{% if request.session.total %}
+	<p>We charged your credit card for ${{ request.session.total }}</p><br>
+	<p>You have ordered {{ request.session.item_count }} items so far and spent {{ request.session.grand_total }} with Amadon.com!</p>
+	{% endif %}
+
+	<a href="/"><button>Go back</button></a><br><br>	
+
+	<h5>For testing</h5>
+	<a href="/clear"><button>Clear Sessions</button></a>	
+
+
+</body>
+</html>
