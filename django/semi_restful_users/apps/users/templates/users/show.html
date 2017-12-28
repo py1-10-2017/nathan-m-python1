@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+			{% load static %}
+	<link rel="stylesheet" href="{% static 'users/css/style.css' %}" media="screen" title="no title"  charset="utf-8">	
+	<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+</head>
+<body>
+
+	<h1>User {{ user.id }} </h1>
+	<h4> Name: {{ user.first_name }} {{user.last_name}} </h4>
+	<h4> Email: {{ user.email }} </h4>
+	<h4> Created At: {{ user.created_at }} </h4>
+
+	<a href='/{{ user.id }}/edit' >Edit</a>
+
+	<a href='/{{ user.id }}/destroy' >Delete</a>
+</body>
+</html>

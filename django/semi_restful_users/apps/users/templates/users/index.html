@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Users</title>
+			{% load static %}
+	<link rel="stylesheet" href="{% static 'users/css/style.css' %}" media="screen" title="no title"  charset="utf-8">	
+  	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+	<div id="wrapper">
+		<h1>Users</h1>
+		{% if messages %}
+		<ul class="messages">
+			{% for message in messages %}
+			<li>{{ message }}</li>
+			{% endfor %}
+		</ul>	
+		{% endif %}
+
+		<table>
+			<tr>
+				<th>id</th>
+				<th>Full Name</th>
+				<th>Email</th>
+				<th>Created At</th>
+				<th>Actions</th>
+			</tr>	
+			{% for user in users %}
+			<tr>
+				<td id="userId">{{ user.id }}</td>
+				<td id="userName">{{ user.first_name }} {{ user.last_name }}</td>
+				<td id="userEmail">{{ user.email }}</td>
+				<td id="createdAt">{{ user.created_at }}</td>				
+
+				<td><a href='/{{ user.id }}/show' class='button'>Show</a>
+
+					<a href='/{{ user.id }}/edit' class='button'>Edit</a>
+
+					<a href='/{{ user.id }}/destroy' class='button'>Delete</a></td>
+			</tr>	
+			{% endfor %}
+					
+		</table>
+		<a href='/new'>Add a new user</a>
+	</div>
+</body>
+</html>
