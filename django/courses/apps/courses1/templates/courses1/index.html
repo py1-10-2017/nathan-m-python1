@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>courses</title>
+			{% load static %}
+	<link rel="stylesheet" href="{% static 'courses1/css/style.css' %}" media="screen" title="no title"  charset="utf-8">	
+  	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+	<div id="wrapper">
+		<h2>Add a new course</h2>
+		{% if messages %}
+		<ul class="messages">
+			{% for message in messages %}
+			<li>{{ message }}</li>
+			{% endfor %}
+		</ul>	
+		{% endif %}
+
+		<form class='inputs' action='create' method='POST'>
+			{% csrf_token %}
+			<div id='first0'>
+				<label>Name:<input type='text' name='course_name' id='fname'></label>
+			</div>
+			<div id='last0'>
+				<label>Description:<textarea name='desc' cols="40" rows="5" id='lname'></textarea></label>
+			</div>			
+			<input id='add' type='submit' class='button' value='Add'>	
+		</form>
+		<table>
+			<tr>
+				<th>Course Name</th>
+				<th>Description</th>
+				<th>Date Added</th>
+				<th>Actions</th>
+			</tr>	
+			{% for course in courses %}
+			<tr>
+				<td id="course1Name">{{ course.course_name }}</td>
+				<td id="course1Email">{{ course.desc }}</td>
+				<td id="createdAt">{{ course.created_at }}</td>				
+
+				<td><a href='/{{ course.id }}/show' >remove</a></td>
+			</tr>	
+			{% endfor %}
+					
+		</table>
+	</div>
+</body>
+</html>

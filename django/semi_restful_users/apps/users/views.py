@@ -50,4 +50,4 @@ def update(request, user_id):
 	u.last_name = request.POST['lname']
 	u.email = request.POST['email']
 	u.save()
- 	return redirect('/') 	 	 	 	 		
+ 	return redirect('/') 

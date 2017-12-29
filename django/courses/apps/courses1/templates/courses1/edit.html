@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>edit</title>
+			{% load static %}
+	<link rel="stylesheet" href="{% static 'courses1/css/style.css' %}" media="screen" title="no title"  charset="utf-8">	
+	<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+	<div id="wrapper">
+		<h1>Edit User {{ user.id }}</h1>
+		<form class='inputs' action='update' method='POST'>
+			{% csrf_token %}
+			<div>
+				<label>ID:<input type='hidden' name='{{ user.id }}' id='{{ user.id }}' value='{{ user.id }}'></label>
+			</div>
+			<div id='first0'>
+				<label>First Name:<input type='text' name='fname' id='fname' value='{{ user.first_name }}'></label>
+			</div>
+			<div id='last0'>
+				<label>Last Name:<input type='text' name='lname' id='lname' value='{{ user.last_name }}'></label>
+			</div>			
+			<div id='email0'>
+				<label>Email:<input type='text' name='email' id='email' value='{{ user.email }}'></label>
+			</div>
+			<input id='add' type='submit' value='Update'>	
+		</form>
+		<a href='/{{ user.id }}/show'>Show</a>
+		<a href='/'>Go Back</a>
+	</div>
+	
+</body>
+</html>

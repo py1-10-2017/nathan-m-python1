@@ -1,0 +1,78 @@
+* {
+	padding: 0;
+	margin: 0;	
+}
+#wrapper {
+	width: 60rem;
+	padding: 1rem;
+}
+h1 {
+	margin-left: 15rem;
+	margin-bottom: 1rem;
+}
+th {
+	background-color: #98A06D
+}
+table {
+	border: 2px solid black;
+	margin-bottom: 2rem;
+}
+td {
+	background-color: #C1C6A5;
+}
+form {
+	width: 22rem;
+}
+input {
+	margin-left: .5rem;
+}
+#first0 {
+	margin-left: .4rem;	
+	margin-bottom: .3rem;
+}
+#last0 {
+	margin-left: .5rem;
+}
+#email0 {
+	margin-left: 2.45rem;
+	display: inline;
+}
+#add {
+	display: inline;
+	background-color: green;
+}
+#course1Id {
+	width: 2rem;
+}
+#course1Name {
+	width: 8rem;
+}
+#course1Email {
+	width: 18rem;
+}
+#createdAt {
+	width: 12rem;
+}
+
+form div {
+	margin-bottom: .3rem;
+}
+
+.button {
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+}
+li {
+	list-style: none;
+}
+#delete {
+	background-color: red;
+}
+
