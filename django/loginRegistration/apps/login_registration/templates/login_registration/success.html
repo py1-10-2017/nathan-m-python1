@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>success</title>
+    	{% load static %}
+	<link rel="stylesheet" href="{% static 'login_registration/css/style.css' %}" media="screen" title="no title"  charset="utf-8">
+	<link rel="icon" href="data:;base64,iVBORw0KGgo=">	
+  	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+	<body>
+		<h2>Success! Welcome, {{ user.first_name }}!</h2>
+		<h4>Successfully registered (or logged in)!</h4>
+
+		<a href="/destroy">log out</a>
+	</body>
+</html>
