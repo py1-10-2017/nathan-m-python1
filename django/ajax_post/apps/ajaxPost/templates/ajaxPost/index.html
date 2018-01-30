@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ajax Post</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js'></script>
+	<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+</head>
+<body>
+	<div id="wrapper" style="margin:2em;">
+		<h1>My Posts</h1>
+		<div class="show_box" style="height:25em; overflow-x:scroll; white-space: nowrap;">
+			<div id="show_submission"></div>
+		</div>
+		<form action="/create" method="POST" id="create_ajax_comment">
+			{% csrf_token %}
+			<div class="form-group">
+		    	<label for="comment">Add a Note:</label>
+		    	<textarea class="form-control" rows="5" cols"20" id="comment" name="comment"></textarea>
+				<button type="submit" class="btn btn-primary" style="display:block; margin-top:.5em;">Post It!</button>	   	
+			 </div>
+		 </form>
+	</div>	
+
+	<script>
+		$('#create_ajax_comment').submit(function(a){
+			a.preventDefault()
+			console.log("send ajax request here", $(this).attr('action'))
+			console.log("here's what's being submitted", $(this).serialize()) 			
+			$.ajax({
+				url: $(this).attr('action'),
+				method: 'post',
+				data: $(this).serialize(),
+				success: function(serverResponse) {
+					$('#show_submission').html(serverResponse)
+				}
+			})
+		})
+	</script>
+</body>
+</html>

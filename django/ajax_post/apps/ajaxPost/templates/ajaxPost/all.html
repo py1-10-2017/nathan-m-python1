@@ -1,0 +1,8 @@
+
+{% for comment in comments %}	
+
+	<div class="comment_box" style="margin-left:.5em; margin-right:.5em; height:20em; width:17em; border:1px solid black; display:inline-block; white-space:normal; vertical-align: text-top; overflow-y:scroll;">
+	{{ comment.comment }}	
+	</div>
+	
+{% endfor %}
